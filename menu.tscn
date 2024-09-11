@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqgeqypn1ptc6"]
+
+[ext_resource type="Theme" uid="uid://c2a8afmxvra38" path="res://new_theme.tres" id="1_ief7i"]
+[ext_resource type="Script" path="res://NewButton.gd" id="2_ga8hr"]
+[ext_resource type="Script" path="res://LoadButton.gd" id="3_r5x1w"]
+[ext_resource type="Script" path="res://QuitButton.gd" id="4_0xwws"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 240.0
+offset_bottom = 179.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme = ExtResource("1_ief7i")
+theme_override_constants/separation = 10
+
+[node name="NewButton" type="Button" parent="VBoxContainer" groups=["Data"]]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("2_ga8hr")
+
+[node name="LoadButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Load Game
+"
+script = ExtResource("3_r5x1w")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Quit"
+script = ExtResource("4_0xwws")
