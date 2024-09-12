@@ -18,7 +18,30 @@ func _process(delta):
 		print("Game Saved.")
 	if (Input.is_action_just_pressed("menu")): # User went to the menu
 		get_tree().change_scene_to_file("res://menu.tscn")
-		
+	var pos = get_viewport().get_mouse_position()
+	var res = get_viewport().get_visible_rect().size
+	var posx = pos.x
+	var posy = pos.y
+	if (posx > res.x):
+		posx = res.x
+	elif (posx < 0):
+		posx = 0
+	if (posy > res.y):
+		posy = res.y
+	elif (posy < 0):
+		posy = 0
+	print(posy)
+	if (posx >= res.x/2): # Cursor is to the right of player, so face right
+		sprite.flip_h = false
+		arm.flip_h = false
+		arm.position.x = -abs(arm.position.x)
+		arm.rotation = atan((posy - res.y/2 + sprite.texture.get_height()/2)/(posx - res.x/2)) - 3.14/2
+	else: # Facing left
+		sprite.flip_h = true
+		arm.flip_h = true
+		arm.position.x = abs(arm.position.x)
+		arm.rotation = atan((posy - res.y/2 + sprite.texture.get_height()/2)/(posx - res.x/2)) + 3.14/2
+	
 
 func save_game():
 	var save_dict = {
@@ -34,15 +57,9 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = -jump_impulse
 	if (Input.is_action_pressed("move_right")):
-		sprite.flip_h = false
-		arm.flip_h = false
-		arm.position.x = -abs(arm.position.x)
 		velocity.x = 200
 	elif (Input.is_action_pressed("move_left")):
 		velocity.x = -200
-		sprite.flip_h = true
-		arm.flip_h = true
-		arm.position.x = abs(arm.position.x)
 	else:
 		apply_friction(FRICTION*delta)
 	move_and_slide()

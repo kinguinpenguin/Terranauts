@@ -16,7 +16,7 @@ scale = Vector2(1.0042, 0.925127)
 texture = ExtResource("2_emrk7")
 
 [node name="arm" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-3.98327, 3.2428)
+position = Vector2(-4.97909, -5.40466)
 scale = Vector2(1.0042, 0.925127)
 texture = ExtResource("3_yy0ci")
 
