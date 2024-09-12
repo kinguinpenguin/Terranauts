@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var jump_impulse = 350
 @export var GRAVITY = 5
 @onready var sprite = get_node("/root/World/Player/Sprite2D")
+@onready var arm = get_node("/root/World/Player/Sprite2D/arm")
 
 @onready var axis = Vector2.ZERO
 
@@ -34,10 +35,14 @@ func _physics_process(delta):
 		velocity.y = -jump_impulse
 	if (Input.is_action_pressed("move_right")):
 		sprite.flip_h = false
+		arm.flip_h = false
+		arm.position.x = -abs(arm.position.x)
 		velocity.x = 200
 	elif (Input.is_action_pressed("move_left")):
 		velocity.x = -200
 		sprite.flip_h = true
+		arm.flip_h = true
+		arm.position.x = abs(arm.position.x)
 	else:
 		apply_friction(FRICTION*delta)
 	move_and_slide()

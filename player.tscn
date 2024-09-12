@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3hyiu75lrej"]
+[gd_scene load_steps=5 format=3 uid="uid://d3hyiu75lrej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_g30tt"]
-[ext_resource type="Texture2D" uid="uid://bs4gwo4e5h6r6" path="res://sprite_hair.png" id="2_b1wio"]
+[ext_resource type="Texture2D" uid="uid://bhhjn306mawvi" path="res://armless.png" id="2_emrk7"]
+[ext_resource type="Texture2D" uid="uid://xor2ricrmr4j" path="res://arm.png" id="3_yy0ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p71af"]
 size = Vector2(40, 53)
@@ -10,10 +11,15 @@ size = Vector2(40, 53)
 script = ExtResource("1_g30tt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.08399, -16.5288)
+position = Vector2(-4, -16)
 scale = Vector2(1.0042, 0.925127)
-texture = ExtResource("2_b1wio")
+texture = ExtResource("2_emrk7")
+
+[node name="arm" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-3.98327, 3.2428)
+scale = Vector2(1.0042, 0.925127)
+texture = ExtResource("3_yy0ci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -17)
+position = Vector2(-4, -16)
 shape = SubResource("RectangleShape2D_p71af")
