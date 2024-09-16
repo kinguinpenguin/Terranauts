@@ -30,7 +30,6 @@ func _process(delta):
 		posy = res.y
 	elif (posy < 0):
 		posy = 0
-	print(posy)
 	if (posx >= res.x/2): # Cursor is to the right of player, so face right
 		sprite.flip_h = false
 		arm.flip_h = false
