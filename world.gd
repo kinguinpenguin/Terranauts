@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("test")
 	if not FileAccess.file_exists("res://saves/savegame.save"):
 		get_tree().change_scene_to_file("res://menu.tscn")
 	else:
