@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqgeqypn1ptc6"]
+[gd_scene load_steps=7 format=3 uid="uid://cqgeqypn1ptc6"]
 
 [ext_resource type="Theme" uid="uid://c2a8afmxvra38" path="res://new_theme.tres" id="1_ief7i"]
+[ext_resource type="StyleBox" uid="uid://cdxuhllwgc8rq" path="res://opaqueTextBox.tres" id="2_34wql"]
 [ext_resource type="Script" path="res://NewButton.gd" id="2_ga8hr"]
 [ext_resource type="Script" path="res://LoadButton.gd" id="3_r5x1w"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="4_0xwws"]
+
+[sub_resource type="Environment" id="Environment_mkum7"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 0.8
+glow_blend_mode = 0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,33 +26,73 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -8.0
-offset_right = 240.0
-offset_bottom = 179.0
+offset_left = 430.0
+offset_top = 12.0
+offset_right = 899.0
+offset_bottom = 555.0
 grow_vertical = 2
-scale = Vector2(2, 2)
+scale = Vector2(0.552601, 0.576391)
 theme = ExtResource("1_ief7i")
 theme_override_constants/separation = 10
 
 [node name="NewButton" type="Button" parent="VBoxContainer" groups=["Data"]]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1.5, 1.4, 1.2, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_34wql")
+theme_override_styles/hover = ExtResource("2_34wql")
+theme_override_styles/pressed = ExtResource("2_34wql")
+theme_override_styles/focus = ExtResource("2_34wql")
 text = "New Game"
 script = ExtResource("2_ga8hr")
 
 [node name="LoadButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1.5, 1.4, 1.2, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_34wql")
+theme_override_styles/hover = ExtResource("2_34wql")
+theme_override_styles/pressed = ExtResource("2_34wql")
+theme_override_styles/focus = ExtResource("2_34wql")
 text = "Load Game
 "
 script = ExtResource("3_r5x1w")
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1.5, 1.4, 1.2, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_34wql")
+theme_override_styles/hover = ExtResource("2_34wql")
+theme_override_styles/pressed = ExtResource("2_34wql")
+theme_override_styles/focus = ExtResource("2_34wql")
 text = "Settings
 "
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(1.5, 1.4, 1.2, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_34wql")
+theme_override_styles/hover = ExtResource("2_34wql")
+theme_override_styles/pressed = ExtResource("2_34wql")
+theme_override_styles/focus = ExtResource("2_34wql")
 text = "Quit"
 script = ExtResource("4_0xwws")
+
+[node name="Title" type="TextEdit" parent="."]
+self_modulate = Color(2, 1.6, 1.3, 1)
+layout_mode = 0
+offset_left = 326.0
+offset_top = 68.0
+offset_right = 655.0
+offset_bottom = 172.0
+scale = Vector2(1.5159, 1.70114)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_34wql")
+text = "Terranauts"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mkum7")
