@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqgeqypn1ptc6"]
+[gd_scene load_steps=8 format=3 uid="uid://cqgeqypn1ptc6"]
 
 [ext_resource type="Theme" uid="uid://c2a8afmxvra38" path="res://new_theme.tres" id="1_ief7i"]
 [ext_resource type="StyleBox" uid="uid://cdxuhllwgc8rq" path="res://opaqueTextBox.tres" id="2_34wql"]
 [ext_resource type="Script" path="res://NewButton.gd" id="2_ga8hr"]
 [ext_resource type="Script" path="res://LoadButton.gd" id="3_r5x1w"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="4_0xwws"]
+[ext_resource type="Texture2D" uid="uid://qri8x341l3jw" path="res://background_temp.png" id="6_4ah05"]
 
 [sub_resource type="Environment" id="Environment_mkum7"]
 background_mode = 3
@@ -96,3 +97,12 @@ text = "Terranauts"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mkum7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("6_4ah05")
