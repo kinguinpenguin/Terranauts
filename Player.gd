@@ -18,6 +18,7 @@ func _process(delta):
 		print("Game Saved.")
 	if (Input.is_action_just_pressed("menu")): # User went to the menu
 		get_tree().change_scene_to_file("res://menu.tscn")
+		return
 	var pos = get_viewport().get_mouse_position()
 	var res = get_viewport().get_visible_rect().size
 	var posx = pos.x
