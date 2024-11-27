@@ -10,5 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (player.position.x > self.position.x && player.position.x < self.position.x + 20): # Crossed Centre of Tile
-		player.position.x = lefttile.position.x
+	pass
+	#if (player.position.x > self.position.x && player.position.x < self.position.x + 20): # Crossed Centre of Tile
+		#player.position.x = lefttile.position.x
