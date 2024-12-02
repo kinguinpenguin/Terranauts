@@ -130,6 +130,7 @@ polygon = PackedVector2Array(1510.81, 21, 1510.81, -17, -1996.73, -17, -1996.73,
 script = ExtResource("3_csrfe")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 position = Vector2(1, 0)
