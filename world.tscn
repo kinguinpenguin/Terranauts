@@ -34,6 +34,7 @@ scale = Vector2(2, 2.16806)
 texture = ExtResource("2_ryuxb")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 position = Vector2(0, 3)
 motion_scale = Vector2(0.25, 1)
 motion_mirroring = Vector2(2880, 0)
