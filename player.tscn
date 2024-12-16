@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3hyiu75lrej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_g30tt"]
-[ext_resource type="Texture2D" uid="uid://bhhjn306mawvi" path="res://armless.png" id="2_emrk7"]
+[ext_resource type="Texture2D" uid="uid://owte0ylheq3e" path="res://armless_new.png" id="2_2r21x"]
 [ext_resource type="Texture2D" uid="uid://xor2ricrmr4j" path="res://arm.png" id="3_yy0ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p71af"]
@@ -13,7 +13,7 @@ script = ExtResource("1_g30tt")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(173, -12)
 scale = Vector2(1.0042, 0.925127)
-texture = ExtResource("2_emrk7")
+texture = ExtResource("2_2r21x")
 
 [node name="arm" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(-4.97909, -5.40466)
