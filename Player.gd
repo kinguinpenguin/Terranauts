@@ -5,10 +5,13 @@ extends CharacterBody2D
 @export var GRAVITY = 5
 @onready var sprite = get_node("/root/World/Player/Sprite2D")
 @onready var arm = get_node("/root/World/Player/Sprite2D/arm")
+@onready var console = get_node("/root/World/console")
 
 @onready var axis = Vector2.ZERO
 
 func _process(delta):
+	if (Input.is_action_just_pressed("interact")):
+		#idk make the console work
 	if (Input.is_action_just_pressed("save")): # User called save
 		var dir = DirAccess.open("res://")
 		var save_file = FileAccess.open("res://saves/savegame.save", FileAccess.WRITE)
