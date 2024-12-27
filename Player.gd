@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var axis = Vector2.ZERO
 
 func _process(delta):
-	if (Input.is_action_just_pressed("interact")):
+	#if (Input.is_action_just_pressed("interact")):
 		#idk make the console work
 	if (Input.is_action_just_pressed("save")): # User called save
 		var dir = DirAccess.open("res://")
