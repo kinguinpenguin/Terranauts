@@ -14,6 +14,8 @@ Can also import animals to farm but they will die if ur not careful
 Eventually can add other planets like Europa, but you won't fly there, you'll send a portable shelter with a teleporter
 You install a teleporter to your shelter and it takes you there
 Will add radiation/cold/heat protection suits required to visit certain planets
+
+maybe stardew/Undertale type of structure for environment cuz u dont wanna have emphasis on mining (which starbound/tertaria do)
 Could all multiplayer as well
 PVE (?) probably not, astroneer don't have that shit neither
 Automation is possible to farm resources, as there'll be deposits of materials
