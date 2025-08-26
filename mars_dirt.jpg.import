@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbibbpewv7d1s"
-path="res://.godot/imported/texture.png-77dc6ecaf884a35cd9dbaf886cacc46d.ctex"
+uid="uid://b0f0q032n623b"
+path="res://.godot/imported/mars_dirt.jpg-8426e997198319da86f1d7f6c9083db0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture.png"
-dest_files=["res://.godot/imported/texture.png-77dc6ecaf884a35cd9dbaf886cacc46d.ctex"]
+source_file="res://mars_dirt.jpg"
+dest_files=["res://.godot/imported/mars_dirt.jpg-8426e997198319da86f1d7f6c9083db0.ctex"]
 
 [params]
 

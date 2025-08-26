@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxtmch3bg5i2f"
-path="res://.godot/imported/texture_top.png-d4fc23f187879db9ded2ae0f3613d7da.ctex"
+uid="uid://cq00klqqag6j2"
+path="res://.godot/imported/mars_tile_area.jpg-45609464bdbe7e5f2655887af39edf12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture_top.png"
-dest_files=["res://.godot/imported/texture_top.png-d4fc23f187879db9ded2ae0f3613d7da.ctex"]
+source_file="res://mars_tile_area.jpg"
+dest_files=["res://.godot/imported/mars_tile_area.jpg-45609464bdbe7e5f2655887af39edf12.ctex"]
 
 [params]
 

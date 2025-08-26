@@ -1,18 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bepu3p3risiwl"]
+[gd_scene load_steps=6 format=3 uid="uid://bepu3p3risiwl"]
 
 [ext_resource type="PackedScene" uid="uid://d3hyiu75lrej" path="res://player.tscn" id="1_87q3b"]
 [ext_resource type="Script" path="res://world.gd" id="1_jpcxh"]
+[ext_resource type="Texture2D" uid="uid://b0f0q032n623b" path="res://mars_dirt.jpg" id="3_1n8lm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tx1a"]
+texture = ExtResource("3_1n8lm")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f7kk3"]
+sources/2 = SubResource("TileSetAtlasSource_7tx1a")
 
 [node name="World" type="Node2D"]
 position = Vector2(398, 242)
 script = ExtResource("1_jpcxh")
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_f7kk3")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262137, 2, 0, -262134, 2, 0, -262131, 2, 0, -65523, 2, 0, -65526, 2, 0, -65529, 2, 0, 131079, 2, 0, 131082, 2, 0, 131085, 2, 0)
+
 [node name="Player" parent="." instance=ExtResource("1_87q3b")]
 motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(185, -3)
-zoom = Vector2(0.8, 0.8)
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+position = Vector2(185, 9)

@@ -21,28 +21,6 @@ func _process(delta):
 	if (Input.is_action_just_pressed("menu")): # User went to the menu
 		get_tree().change_scene_to_file("res://menu.tscn")
 		return
-	var pos = get_viewport().get_mouse_position()
-	var res = get_viewport().get_visible_rect().size
-	var posx = pos.x
-	var posy = pos.y
-	if (posx > res.x):
-		posx = res.x
-	elif (posx < 0):
-		posx = 0
-	if (posy > res.y):
-		posy = res.y
-	elif (posy < 0):
-		posy = 0
-	if (posx >= res.x/2): # Cursor is to the right of player, so face right
-		sprite.flip_h = false
-		arm.flip_h = false
-		arm.position.x = -abs(arm.position.x)
-		arm.rotation = atan((posy - res.y/2 + sprite.texture.get_height()/2)/(posx - res.x/2)) - 3.14/2
-	else: # Facing left
-		sprite.flip_h = true
-		arm.flip_h = true
-		arm.position.x = abs(arm.position.x)
-		arm.rotation = atan((posy - res.y/2 + sprite.texture.get_height()/2)/(posx - res.x/2)) + 3.14/2
 	
 
 func save_game():
@@ -58,8 +36,10 @@ func get_input():
 	var input = Vector2()
 	if Input.is_action_pressed('right'):
 		input.x += 1
+		sprite.flip_h = false
 	if Input.is_action_pressed('left'):
 		input.x -= 1
+		sprite.flip_h = true
 	if Input.is_action_pressed('down'):
 		input.y += 1
 	if Input.is_action_pressed('up'):
