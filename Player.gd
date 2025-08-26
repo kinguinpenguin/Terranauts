@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-@export var FRICTION = 300
-@export var jump_impulse = 350
-@export var GRAVITY = 5
 @onready var sprite = get_node("/root/World/Player/Sprite2D")
 @onready var arm = get_node("/root/World/Player/Sprite2D/arm")
 @onready var console = get_node("/root/World/console")
-
+@export var speed = 200
+@export var friction = 0.08
+@export var acceleration = 0.1
 @onready var axis = Vector2.ZERO
 
 func _process(delta):
@@ -55,20 +54,22 @@ func save_game():
 	}
 	return save_dict
 
-func _physics_process(delta):
-	velocity.y += GRAVITY
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = -jump_impulse
-	if (Input.is_action_pressed("move_right")):
-		velocity.x = 200
-	elif (Input.is_action_pressed("move_left")):
-		velocity.x = -200
-	else:
-		apply_friction(FRICTION*delta)
-	move_and_slide()
+func get_input():
+	var input = Vector2()
+	if Input.is_action_pressed('right'):
+		input.x += 1
+	if Input.is_action_pressed('left'):
+		input.x -= 1
+	if Input.is_action_pressed('down'):
+		input.y += 1
+	if Input.is_action_pressed('up'):
+		input.y -= 1
+	return input
 
-func apply_friction(amount):
-	if velocity.length() > amount:
-		velocity.x -= velocity.normalized().x * amount
+func _physics_process(delta):
+	var direction = get_input()
+	if direction.length() > 0:
+		velocity = velocity.lerp(direction.normalized() * speed, acceleration)
 	else:
-		velocity.x = 0
+		velocity = velocity.lerp(Vector2.ZERO, friction)
+	move_and_slide()

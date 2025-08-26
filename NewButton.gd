@@ -37,7 +37,7 @@ func new_game():
 	var save_dict = {
 		"filename": "Save1",
 		"player_pos_x": 0,
-		"player_pos_y": 40,
+		"player_pos_y": 0,
 		"buildings": []
 	}
 	return save_dict
