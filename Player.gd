@@ -34,15 +34,22 @@ func save_game():
 
 func get_input():
 	var input = Vector2()
+	var side = load('res://armless_new.png')
+	var forward = load('res://armless_new_forward.png')
+	var backward = load('res://armless_new_backward.png')
 	if Input.is_action_pressed('right'):
 		input.x += 1
+		$Sprite2D.texture = side
 		sprite.flip_h = false
 	if Input.is_action_pressed('left'):
+		$Sprite2D.texture = side
 		input.x -= 1
 		sprite.flip_h = true
 	if Input.is_action_pressed('down'):
+		$Sprite2D.texture = forward
 		input.y += 1
 	if Input.is_action_pressed('up'):
+		$Sprite2D.texture = backward
 		input.y -= 1
 	return input
 
