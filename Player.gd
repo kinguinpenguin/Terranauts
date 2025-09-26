@@ -37,6 +37,14 @@ func get_input():
 	var side = load('res://armless_new.png')
 	var forward = load('res://armless_new_forward.png')
 	var backward = load('res://armless_new_backward.png')
+	if Input.is_action_pressed('down'):
+		$Sprite2D.texture = forward
+		sprite.flip_h = true
+		input.y += 1
+	if Input.is_action_pressed('up'):
+		sprite.flip_h = false
+		$Sprite2D.texture = backward
+		input.y -= 1
 	if Input.is_action_pressed('right'):
 		input.x += 1
 		$Sprite2D.texture = side
@@ -45,12 +53,6 @@ func get_input():
 		$Sprite2D.texture = side
 		input.x -= 1
 		sprite.flip_h = true
-	if Input.is_action_pressed('down'):
-		$Sprite2D.texture = forward
-		input.y += 1
-	if Input.is_action_pressed('up'):
-		$Sprite2D.texture = backward
-		input.y -= 1
 	return input
 
 func _physics_process(delta):
