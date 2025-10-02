@@ -1,14 +1,4 @@
 extends Node
-tool
-
-export (Texture) var image setget set_image
-
-export (Vector2) var tile_size setget set_tile_size#, get_tile_size
-
-export (Vector2) var shape_extents setget set_shape_extents, get_shape_extents
-
-export (bool) var create_shapes = false
-export (bool) var create_light_occluder = false
 #export (int, "Area2d", "StaticBody2d", "KinematicBody2d", "RigidBody2d") var collision_type setget set_collision_type, get_collision_type
 
 func set_shape_extents(value):

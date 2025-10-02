@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn6qmh6bm663g"]
+
+[ext_resource type="Texture2D" uid="uid://bls4uqsvqf1th" path="res://ninja_adventure_assets/invenSlot.png" id="1_2wged"]
+
+[node name="Slot" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_2wged")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
